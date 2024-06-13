@@ -26,5 +26,7 @@ pushd "src/${module}"
         || exit 1
 popd
 
+ls "${PREFIX}/bin/${PKG_NAME}"
+
 # Make GOPATH directories writeable so conda-build can clean everything up.
 find "$( go env GOPATH )" -type d -exec chmod +w {} \;

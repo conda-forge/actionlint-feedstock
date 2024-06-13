@@ -3,6 +3,43 @@ About actionlint-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/actionlint-feedstock/blob/main/LICENSE.txt)
 
+
+About actionlint
+----------------
+
+Home: https://github.com/rhysd/actionlint
+
+Package license: MIT
+
+Summary: Static checker for GitHub Actions workflow files
+
+Documentation: https://rhysd.github.io/actionlint
+
+About actionlint-with-pyflakes
+------------------------------
+
+Home: https://github.com/rhysd/actionlint
+
+Package license: MIT
+
+Summary: Static checker for GitHub Actions workflow files
+
+Documentation: https://rhysd.github.io/actionlint
+
+About actionlint-with-shellcheck
+--------------------------------
+
+Home: https://github.com/rhysd/actionlint
+
+Package license: MIT
+
+Summary: Static checker for GitHub Actions workflow files
+
+Documentation: https://rhysd.github.io/actionlint
+
+About actionlint-with-all
+-------------------------
+
 Home: https://github.com/rhysd/actionlint
 
 Package license: MIT
@@ -40,6 +77,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22579&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/actionlint-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22579&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/actionlint-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
