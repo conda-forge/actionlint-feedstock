@@ -2,7 +2,7 @@
 {% set gomodule = "github.com/rhysd/actionlint" %}
 
 package:
-  name: actionlint
+  name: actionlint-split
   version: {{ version }}
 
 source:
@@ -14,26 +14,35 @@ build:
   number: 0
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('go-cgo') }}
-    - {{ stdlib("c") }}
-    - go-cgo >=1.23
-    - go-licenses
-    - posix  # [win]
+  build: []
   host: []
   run: []
 
 test:
-  requires:
-    - m2-grep  # [win]
   commands:
-    - actionlint --version
-    - actionlint --help
-    - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+    - echo "tests in subpackages"
 
 outputs:
   - name: actionlint
+    build:
+      script:
+        - "%RECIPE_DIR%\bld_actionlint.bat"       # [win]
+        - bash $RECIPE_DIR/build_actionlint.sh  # [unix]
+    requirements:
+      build:
+        - {{ compiler("c") }}
+        - {{ compiler("go-cgo") }}
+        - {{ stdlib("c") }}
+        - go-cgo >=1.23
+        - go-licenses
+        - posix  # [win]
+    test:
+      requires:
+        - m2-grep  # [win]
+      commands:
+        - actionlint --version
+        - actionlint --help
+        - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
 
   - name: actionlint-with-shellcheck
     build:
@@ -92,5 +101,6 @@ about:
   doc_url: https://rhysd.github.io/actionlint
 
 extra:
+  feedstock-name: actionlint
   recipe-maintainers:
     - bollwyvl
