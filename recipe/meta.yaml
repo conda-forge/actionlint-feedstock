@@ -26,8 +26,8 @@ outputs:
   - name: actionlint
     build:
       script:
-        - "%RECIPE_DIR%\bld_actionlint.bat"       # [win]
-        - bash $RECIPE_DIR/build_actionlint.sh  # [unix]
+        - call "%RECIPE_DIR%/bld_actionlint.bat"  # [win]
+        - bash "$RECIPE_DIR/build_actionlint.sh"  # [unix]
     requirements:
       build:
         - {{ compiler("c") }}
