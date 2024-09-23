@@ -34,6 +34,7 @@ test:
 
 outputs:
   - name: actionlint
+
   - name: actionlint-with-shellcheck
     build:
       noarch: generic
