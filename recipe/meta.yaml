@@ -1,39 +1,53 @@
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 {% set gomodule = "github.com/rhysd/actionlint" %}
 
+{% set build_outputs = false %}
+{% set build_outputs = true %}  # [linux64]
+
 package:
-  name: actionlint
+  name: actionlint-split
   version: {{ version }}
 
 source:
   folder: src/{{ gomodule }}
   url: https://{{ gomodule }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f53808c46db1ac2aa579b00f4a12a8acdf6eaf85a382091ce051dea33b18d7b4
+  sha256: df74bf4789cbb9c631b92da5d27ed1f3565fea0f7bb62bb5840c2b99ea999f57
 
 build:
-  number: 1
+  number: 0
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('go-cgo') }}
-    - {{ stdlib("c") }}
-    - go-cgo >=1.21
-    - go-licenses
-    - posix  # [win]
+  build: []
   host: []
   run: []
 
 test:
-  requires:
-    - m2-grep  # [win]
   commands:
-    - actionlint --version
-    - actionlint --help
-    - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+    - echo "tests in subpackages"
 
 outputs:
   - name: actionlint
+    build:
+      script:
+        - call "%RECIPE_DIR%/bld_actionlint.bat"  # [win]
+        - bash "$RECIPE_DIR/build_actionlint.sh"  # [unix]
+    requirements:
+      build:
+        - {{ compiler("c") }}
+        - {{ compiler("go-cgo") }}
+        - {{ stdlib("c") }}
+        - go-cgo >=1.23
+        - go-licenses
+        - posix  # [win]
+    test:
+      requires:
+        - m2-grep  # [win]
+      commands:
+        - actionlint --version
+        - actionlint --help
+        - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+
+  {% if build_outputs %}
   - name: actionlint-with-shellcheck
     build:
       noarch: generic
@@ -79,6 +93,7 @@ outputs:
         - actionlint --version
         - actionlint --help
         - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+  {% endif %}
 
 about:
   home: https://{{ gomodule }}
@@ -91,5 +106,6 @@ about:
   doc_url: https://rhysd.github.io/actionlint
 
 extra:
+  feedstock-name: actionlint
   recipe-maintainers:
     - bollwyvl
