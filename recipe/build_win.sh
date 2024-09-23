@@ -40,6 +40,7 @@ pushd "src/${module}"
         --ignore=internal/bytealg \
         --ignore=internal/byteorder \
         --ignore=internal/chacha8rand \
+        --ignore=internal/concurrent \
         --ignore=internal/coverage/rtcov \
         --ignore=internal/cpu \
         --ignore=internal/filepathlite \
@@ -68,6 +69,7 @@ pushd "src/${module}"
         --ignore=internal/syscall/windows/sysdll \
         --ignore=internal/testlog \
         --ignore=internal/unsafeheader \
+        --ignore=internal/weak  \
         --ignore=io \
         --ignore=io/fs \
         --ignore=io/ioutil \
