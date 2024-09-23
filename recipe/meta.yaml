@@ -1,6 +1,9 @@
 {% set version = "1.7.2" %}
 {% set gomodule = "github.com/rhysd/actionlint" %}
 
+{% set build_outputs = false %}
+{% set build_outputs = true %}  # [linux64]
+
 package:
   name: actionlint-split
   version: {{ version }}
@@ -44,6 +47,7 @@ outputs:
         - actionlint --help
         - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
 
+  {% if build_outputs %}
   - name: actionlint-with-shellcheck
     build:
       noarch: generic
@@ -89,6 +93,7 @@ outputs:
         - actionlint --version
         - actionlint --help
         - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+  {% endif %}
 
 about:
   home: https://{{ gomodule }}
