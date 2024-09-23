@@ -1,6 +1,6 @@
 @echo on
 
-copy "%RECIPE_DIR%\build_win.sh" .
+copy "%RECIPE_DIR%\build_actionlint_win.sh" .
 if %errorlevel% neq 0 exit /b %errorlevel%
 
 set PREFIX=%PREFIX:\=/%
