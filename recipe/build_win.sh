@@ -35,11 +35,14 @@ pushd "src/${module}"
         --ignore=flag \
         --ignore=fmt \
         --ignore=internal/abi \
+        --ignore=internal/asan \
         --ignore=internal/bisect \
         --ignore=internal/bytealg \
+        --ignore=internal/byteorder \
         --ignore=internal/chacha8rand \
         --ignore=internal/coverage/rtcov \
         --ignore=internal/cpu \
+        --ignore=internal/filepathlite \
         --ignore=internal/fmtsort \
         --ignore=internal/goarch \
         --ignore=internal/godebug \
@@ -47,13 +50,18 @@ pushd "src/${module}"
         --ignore=internal/goos \
         --ignore=internal/intern \
         --ignore=internal/itoa \
+        --ignore=internal/msan \
         --ignore=internal/nettrace \
         --ignore=internal/oserror \
         --ignore=internal/poll \
+        --ignore=internal/profilerecord \
         --ignore=internal/race \
         --ignore=internal/reflectlite \
+        --ignore=internal/runtime/atomic \
+        --ignore=internal/runtime/exithook \
         --ignore=internal/safefilepath \
         --ignore=internal/singleflight \
+        --ignore=internal/stringslite \
         --ignore=internal/syscall/execenv \
         --ignore=internal/syscall/windows \
         --ignore=internal/syscall/windows/registry \
@@ -63,6 +71,7 @@ pushd "src/${module}"
         --ignore=io \
         --ignore=io/fs \
         --ignore=io/ioutil \
+        --ignore=iter \
         --ignore=log \
         --ignore=math \
         --ignore=math/bits \
@@ -88,6 +97,7 @@ pushd "src/${module}"
         --ignore=time \
         --ignore=unicode \
         --ignore=unicode/utf8 \
+        --ignore=unique \
         --ignore=vendor/golang.org/x/net/dns/dnsmessage \
         || exit 1
 popd
