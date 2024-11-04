@@ -1,3 +1,6 @@
 c_stdlib_version:    # [unix]
   - "2.17"           # [linux]
   - "11.0"           # [osx and x86_64]
+cgo_compiler_version:
+  - "1.22"          # [osx and x86_64]
+  - "1.23"          # [not (osx and x86_64)]

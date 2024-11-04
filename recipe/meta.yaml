@@ -36,7 +36,6 @@ outputs:
         - {{ compiler("c") }}
         - {{ compiler("go-cgo") }}
         - {{ stdlib("c") }}
-        - go-cgo >=1.23
         - go-licenses
         - posix  # [win]
     test:
