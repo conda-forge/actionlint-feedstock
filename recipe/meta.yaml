@@ -1,4 +1,4 @@
-{% set version = "1.7.3" %}
+{% set version = "1.7.4" %}
 {% set gomodule = "github.com/rhysd/actionlint" %}
 
 {% set build_outputs = false %}
@@ -11,7 +11,7 @@ package:
 source:
   folder: src/{{ gomodule }}
   url: https://{{ gomodule }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 11f0f78869a93afde4866ff5296af145c7c5b5556075cc43a082b17e055a2db7
+  sha256: 3004bcb4615510e671c76a56259755ed616c3200fb73b0be0ca9c3d6ea09c73a
 
 build:
   number: 0
@@ -36,7 +36,6 @@ outputs:
         - {{ compiler("c") }}
         - {{ compiler("go-cgo") }}
         - {{ stdlib("c") }}
-        - go-cgo >=1.23
         - go-licenses
         - posix  # [win]
     test:
