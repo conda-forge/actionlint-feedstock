@@ -1,4 +1,4 @@
-{% set version = "1.7.4" %}
+{% set version = "1.7.5" %}
 {% set gomodule = "github.com/rhysd/actionlint" %}
 
 {% set build_outputs = false %}
@@ -11,7 +11,7 @@ package:
 source:
   folder: src/{{ gomodule }}
   url: https://{{ gomodule }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3004bcb4615510e671c76a56259755ed616c3200fb73b0be0ca9c3d6ea09c73a
+  sha256: ec5bca19701ff27c74f5aca6239d7e8e82a71f42e470a80abce1253bdb1baab5
 
 build:
   number: 0
@@ -44,7 +44,7 @@ outputs:
       commands:
         - actionlint --version
         - actionlint --help
-        - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+        - actionlint --version | grep -iE {{ version.replace(".", "\.") }}
 
   {% if build_outputs %}
   - name: actionlint-with-shellcheck
@@ -60,7 +60,7 @@ outputs:
       commands:
         - actionlint --version
         - actionlint --help
-        - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+        - actionlint --version | grep -iE {{ version.replace(".", "\.") }}
 
   - name: actionlint-with-pyflakes
     build:
@@ -75,7 +75,7 @@ outputs:
       commands:
         - actionlint --version
         - actionlint --help
-        - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+        - actionlint --version | grep -iE {{ version.replace(".", "\.") }}
 
   - name: actionlint-with-all
     build:
@@ -91,7 +91,7 @@ outputs:
       commands:
         - actionlint --version
         - actionlint --help
-        - actionlint --version | grep -iE "{{ version.replace(".", "\.") }}"
+        - actionlint --version | grep -iE {{ version.replace(".", "\.") }}
   {% endif %}
 
 about:
