@@ -84,6 +84,9 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-actionlint-green.svg)](https://anaconda.org/conda-forge/actionlint) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/actionlint.svg)](https://anaconda.org/conda-forge/actionlint) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/actionlint.svg)](https://anaconda.org/conda-forge/actionlint) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/actionlint.svg)](https://anaconda.org/conda-forge/actionlint) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-actionlint--with--all-green.svg)](https://anaconda.org/conda-forge/actionlint-with-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/actionlint-with-all.svg)](https://anaconda.org/conda-forge/actionlint-with-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/actionlint-with-all.svg)](https://anaconda.org/conda-forge/actionlint-with-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/actionlint-with-all.svg)](https://anaconda.org/conda-forge/actionlint-with-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-actionlint--with--pyflakes-green.svg)](https://anaconda.org/conda-forge/actionlint-with-pyflakes) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/actionlint-with-pyflakes.svg)](https://anaconda.org/conda-forge/actionlint-with-pyflakes) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/actionlint-with-pyflakes.svg)](https://anaconda.org/conda-forge/actionlint-with-pyflakes) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/actionlint-with-pyflakes.svg)](https://anaconda.org/conda-forge/actionlint-with-pyflakes) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-actionlint--with--shellcheck-green.svg)](https://anaconda.org/conda-forge/actionlint-with-shellcheck) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/actionlint-with-shellcheck.svg)](https://anaconda.org/conda-forge/actionlint-with-shellcheck) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/actionlint-with-shellcheck.svg)](https://anaconda.org/conda-forge/actionlint-with-shellcheck) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/actionlint-with-shellcheck.svg)](https://anaconda.org/conda-forge/actionlint-with-shellcheck) |
 
 Installing actionlint
 =====================
@@ -95,16 +98,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `actionlint` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `actionlint, actionlint-with-all, actionlint-with-pyflakes, actionlint-with-shellcheck` can be installed with `conda`:
 
 ```
-conda install actionlint
+conda install actionlint actionlint-with-all actionlint-with-pyflakes actionlint-with-shellcheck
 ```
 
 or with `mamba`:
 
 ```
-mamba install actionlint
+mamba install actionlint actionlint-with-all actionlint-with-pyflakes actionlint-with-shellcheck
 ```
 
 It is possible to list all of the versions of `actionlint` available on your platform with `conda`:

@@ -1,5 +1,3 @@
-actionlint_only:
-- '1'
 c_compiler:
 - vs2019
 c_stdlib:
