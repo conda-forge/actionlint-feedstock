@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eux -o pipefile
+set -eux -o pipefail
 
 module="github.com/rhysd/actionlint"
 

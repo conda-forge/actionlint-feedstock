@@ -3,8 +3,7 @@ schema_version: 1
 
 context:
   version: 1.7.7
-  go_module: github.com/rhysd/actionlint
-  core_only: ${{ target_platform != "linux-64" }}
+  core_only: ${{ linux64 }}
   basic_test: >-
     actionlint --version
     && actionlint --help
@@ -14,16 +13,17 @@ recipe:
   name: actionlint
   version: ${{ version }}
 
+source:
+  target_directory: src/github.com/rhysd/actionlint
+  url: https://github.com/rhysd/actionlint/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 237aec651a903bf4e9f9c8eb638da6aa4d89d07c484f45f11cfb89c2dbf277a5
+
 build:
   number: 0
 
 outputs:
   - package:
       name: actionlint
-    source:
-      target_directory: src/${{ gomodule }}
-      url: https://${{ gomodule }}/archive/refs/tags/v${{ version }}.tar.gz
-      sha256: 237aec651a903bf4e9f9c8eb638da6aa4d89d07c484f45f11cfb89c2dbf277a5
     build:
       script:
         - if: win
@@ -77,7 +77,7 @@ outputs:
         script: ${{ basic_test }}
 
   - package:
-      name: actionlint-with-pyflakes
+      name: actionlint-with-all
     build:
       noarch: generic
       skip: core_only
@@ -98,7 +98,7 @@ about:
   homepage: https://github.com/rhysd/actionlint
   license: MIT
   license_file:
-    - src/${{ gomodule }}/LICENSE.txt
+    - src/github.com/rhysd/actionlint/LICENSE.txt
     - license-files/
   summary: Static checker for GitHub Actions workflow files
   documentation: https://rhysd.github.io/actionlint
