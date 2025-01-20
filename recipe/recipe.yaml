@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   version: 1.7.7
-  core_only: ${{ linux64 }}
+  core_only: ${{ core_only | default("0") | bool }}
   basic_test: >-
     actionlint --version
     && actionlint --help
