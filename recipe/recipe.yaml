@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   version: 1.7.7
-  core_only: ${{ core_only | default("0") | bool }}
+  actionlint_only: ${{ actionlint_only | default("0") | bool }}
   basic_test: >-
     actionlint --version
     && actionlint --help
@@ -48,7 +48,7 @@ outputs:
       name: actionlint-with-shellcheck
     build:
       noarch: generic
-      skip: core_only
+      skip: actionlint_only
     requirements:
       run:
         - ${{ pin_subpackage("actionlint", upper_bound="x.x.x") }}
@@ -64,7 +64,7 @@ outputs:
       name: actionlint-with-pyflakes
     build:
       noarch: generic
-      skip: core_only
+      skip: actionlint_only
     requirements:
       run:
         - ${{ pin_subpackage("actionlint", upper_bound="x.x.x") }}
@@ -80,7 +80,7 @@ outputs:
       name: actionlint-with-all
     build:
       noarch: generic
-      skip: core_only
+      skip: actionlint_only
     requirements:
       run:
         - ${{ pin_subpackage("actionlint", upper_bound="x.x.x") }}

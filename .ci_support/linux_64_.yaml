@@ -1,3 +1,5 @@
+actionlint_only:
+- '0'
 c_compiler:
 - gcc
 c_compiler_version:
