@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
-set -eux
+set -eux -o pipefail
 
 module="github.com/rhysd/actionlint"
 
-export GOPATH="$( pwd )"
+GOPATH="$( pwd )"
+export GOPATH
 export GOROOT="${BUILD_PREFIX}/go"
 export GOOS=windows
 export GOARCH=amd64
 export CGO_ENABLED=1
 export GO111MODULE=on
 
-which go
+command -v go
 env | grep GOROOT
 go version
 
 pushd "src/${module}"
     go get -v "./cmd/${PKG_NAME}"
     go build \
-        -ldflags "-s -w -X $module.version=${PKG_VERSION}" \
+        -ldflags "-s -w -X ${module}.version=${PKG_VERSION}" \
         -o "${PREFIX}/bin/${PKG_NAME}.exe" \
         "./cmd/${PKG_NAME}" \
         || exit 1
