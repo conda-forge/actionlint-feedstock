@@ -1,4 +1,4 @@
-{% set version = "1.7.6" %}
+{% set version = "1.7.7" %}
 {% set gomodule = "github.com/rhysd/actionlint" %}
 
 {% set build_outputs = false %}
@@ -11,7 +11,7 @@ package:
 source:
   folder: src/{{ gomodule }}
   url: https://{{ gomodule }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 59b49d1cabe927d2f1ba67b15f4cd44e56b30ba28eaf48f9bdd71274bedb8061
+  sha256: 237aec651a903bf4e9f9c8eb638da6aa4d89d07c484f45f11cfb89c2dbf277a5
 
 build:
   number: 0
