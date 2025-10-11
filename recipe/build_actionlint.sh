@@ -15,7 +15,7 @@ command -v go
 env | grep GOROOT
 go version
 
-bash ${RECIPE_DIR}/check-go-version.sh || exit 2
+bash "${RECIPE_DIR}/check-go-version.sh" || exit 2
 
 pushd "src/${module}"
     go build \
