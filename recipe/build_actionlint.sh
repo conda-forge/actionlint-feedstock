@@ -4,6 +4,7 @@ set -eux -o pipefail
 module="github.com/rhysd/actionlint"
 
 GOPATH="$( pwd )"
+
 export GOPATH
 export GOROOT="${BUILD_PREFIX}/go"
 export GO_EXTLINK_ENABLED=1
@@ -14,16 +15,18 @@ command -v go
 env | grep GOROOT
 go version
 
+bash "${RECIPE_DIR}/check-go-version.sh" || exit 2
+
 pushd "src/${module}"
     go build \
         -buildmode=pie \
         -ldflags "-s -w -X ${module}.version=${PKG_VERSION}" \
         -o "${PREFIX}/bin/${PKG_NAME}" \
         "./cmd/${PKG_NAME}" \
-        || exit 1
+        || exit 3
     go-licenses save "./cmd/${PKG_NAME}" \
         --save_path "${SRC_DIR}/license-files" \
-        || exit 1
+        || exit 4
 popd
 
 ls "${PREFIX}/bin/${PKG_NAME}"
