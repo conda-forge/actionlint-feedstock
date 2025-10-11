@@ -2,11 +2,14 @@
 
 set GOPATH=%SRC_DIR%
 
-cd "%SRC_DIR%\github.com\rhysd\actionlint"
+cd "%SRC_DIR%\github.com\rhysd\actionlint" ^
+    || exit 2
+
+dir
 
 go build ^
     -ldflags "-s -w -X github.com/rhysd/actionlint.version=%PKG_VERSION%" ^
-    -o "%PREFIX%\Library\bin\%PKG_NAME%.exe" ^
+    -o "%PREFIX%\bin\%PKG_NAME%.exe" ^
     ".\cmd\%PKG_NAME%" ^
     || exit 3
 

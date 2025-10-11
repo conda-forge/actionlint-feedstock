@@ -3,8 +3,8 @@ set -eux -o pipefail
 
 module="github.com/rhysd/actionlint"
 
-
 GOPATH="$( pwd )"
+
 export GOPATH
 export GOROOT="${BUILD_PREFIX}/go"
 export GO_EXTLINK_ENABLED=1
