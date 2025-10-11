@@ -6,4 +6,4 @@ c_compiler_version:  # [osx and x86_64]
   - "17"             # [osx and x86_64]
 
 cgo_compiler_version:
-  - "1.23"
+  - "1.24"
