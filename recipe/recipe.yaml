@@ -43,7 +43,10 @@ outputs:
             - if: win
               then: m2-grep
         script: ${{ basic_test }}
-
+    about:
+      license_file:
+        - src/github.com/rhysd/actionlint/LICENSE.txt
+        - license-files/
   - package:
       name: actionlint-with-shellcheck
     build:
@@ -99,7 +102,6 @@ about:
   license: MIT
   license_file:
     - src/github.com/rhysd/actionlint/LICENSE.txt
-    - license-files/
   summary: Static checker for GitHub Actions workflow files
   documentation: https://rhysd.github.io/actionlint
 
