@@ -2,7 +2,7 @@
 
 set GOPATH=%SRC_DIR%
 
-cd github.com/rhysd/actionlint
+cd "%SRC_DIR%\github.com\rhysd\actionlint"
 
 go build ^
     -ldflags "-s -w -X github.com/rhysd/actionlint.version=%PKG_VERSION%" ^
