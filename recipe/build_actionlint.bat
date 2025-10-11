@@ -2,7 +2,7 @@
 
 set GOPATH=%SRC_DIR%
 
-cd "%SRC_DIR%\github.com\rhysd\actionlint" ^
+cd "src\github.com\rhysd\actionlint" ^
     || exit 2
 
 dir
