@@ -1,5 +1,4 @@
 @echo on
-module=""
 
 set GOPATH=%SRC_DIR%
 
