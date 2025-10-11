@@ -3,6 +3,43 @@ About actionlint-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/actionlint-feedstock/blob/main/LICENSE.txt)
 
+
+About actionlint
+----------------
+
+Home: https://github.com/rhysd/actionlint
+
+Package license: MIT
+
+Summary: Static checker for GitHub Actions workflow files
+
+Documentation: https://rhysd.github.io/actionlint
+
+About actionlint-with-all
+-------------------------
+
+Home: https://github.com/rhysd/actionlint
+
+Package license: MIT
+
+Summary: Static checker for GitHub Actions workflow files
+
+Documentation: https://rhysd.github.io/actionlint
+
+About actionlint-with-pyflakes
+------------------------------
+
+Home: https://github.com/rhysd/actionlint
+
+Package license: MIT
+
+Summary: Static checker for GitHub Actions workflow files
+
+Documentation: https://rhysd.github.io/actionlint
+
+About actionlint-with-shellcheck
+--------------------------------
+
 Home: https://github.com/rhysd/actionlint
 
 Package license: MIT

@@ -29,8 +29,6 @@ outputs:
         - ${{ compiler("go-cgo") }}
         - ${{ stdlib("c") }}
         - go-licenses
-        - if: win
-          then: posix
     tests:
       - script:
         - actionlint --version
