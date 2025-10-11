@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 1.7.7
+  version: "1.7.8"
   skip_extras: ${{ aarch64 or ppc64le or osx or win }}
   basic_test: >-
     actionlint --version
@@ -16,7 +16,7 @@ recipe:
 source:
   target_directory: src/github.com/rhysd/actionlint
   url: https://github.com/rhysd/actionlint/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 237aec651a903bf4e9f9c8eb638da6aa4d89d07c484f45f11cfb89c2dbf277a5
+  sha256: 1c1e058ed2202e342f474c6ec1a18164cd60473f61163b78a6afb5aff4fac4bc
 
 build:
   number: 0
