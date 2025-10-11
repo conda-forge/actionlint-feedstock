@@ -15,13 +15,15 @@ command -v go
 env | grep GOROOT
 go version
 
+bash ${RECIPE_DIR}/check-go-version.sh || exit 2
+
 pushd "src/${module}"
     go get -v "./cmd/${PKG_NAME}"
     go build \
         -ldflags "-s -w -X ${module}.version=${PKG_VERSION}" \
         -o "${PREFIX}/bin/${PKG_NAME}.exe" \
         "./cmd/${PKG_NAME}" \
-        || exit 1
+        || exit 3
     # except the first, all --ignores are stdlib, found for some reason
     go-licenses save "./cmd/${PKG_NAME}" \
         --save_path "${SRC_DIR}/license-files" \
@@ -61,9 +63,13 @@ pushd "src/${module}"
         --ignore=internal/reflectlite \
         --ignore=internal/runtime/atomic \
         --ignore=internal/runtime/exithook \
+        --ignore=internal/runtime/maps \
+        --ignore=internal/runtime/math \
+        --ignore=internal/runtime/sys \
         --ignore=internal/safefilepath \
         --ignore=internal/singleflight \
         --ignore=internal/stringslite \
+        --ignore=internal/sync \
         --ignore=internal/syscall/execenv \
         --ignore=internal/syscall/windows \
         --ignore=internal/syscall/windows/registry \
@@ -76,6 +82,7 @@ pushd "src/${module}"
         --ignore=io/ioutil \
         --ignore=iter \
         --ignore=log \
+        --ignore=maps \
         --ignore=math \
         --ignore=math/bits \
         --ignore=net \
@@ -102,5 +109,6 @@ pushd "src/${module}"
         --ignore=unicode/utf8 \
         --ignore=unique \
         --ignore=vendor/golang.org/x/net/dns/dnsmessage \
-        || exit 1
+        --ignore=weak \
+        || exit 4
 popd
