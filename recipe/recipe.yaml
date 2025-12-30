@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.7.9"
+  version: "1.7.10"
   skip_extras: ${{ aarch64 or ppc64le or osx or win }}
 
 recipe:
@@ -12,7 +12,7 @@ recipe:
 source:
   target_directory: src/github.com/rhysd/actionlint
   url: https://github.com/rhysd/actionlint/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 3decd3ee2ef2e7382dee8c09994ad9f5a3c456751efbe2ba39fef7f1305703c0
+  sha256: fd5193e1724062dbc086af4478a3c28492585266a9ff6fa134c3751eb38bc4ef
 
 build:
   number: 0
